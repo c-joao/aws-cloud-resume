@@ -1,0 +1,271 @@
+/* Base Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f2f2f2 ;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+.container {
+  display: flex;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+/* Left Column: 30% width, with extra left padding */
+.left-column {
+  flex: 0 0 30%;
+  background-color: #e3d9d0;
+  padding: 20px 20px 20px 40px;  /* Top, right, bottom, left */
+  border-radius: 8px 0 0 8px;
+}
+/* Right Column: 70% width, with matching left padding and a border-left */
+.right-column {
+  flex: 0 0 70%;
+  background-color: #fff;
+  padding: 20px 20px 20px 40px;  /* same left padding */
+  border-radius: 0 8px 8px 0;
+  border-left: 1px solid #8B4513; /* Mid-brown divider */
+}
+/* Ensure uniform spacing for sections */
+.section {
+  margin-bottom: 60px;  /* Increased space between sections */
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.section-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #2C3E50;
+  font-weight: 600;
+}
+.normal-heading {
+text-transform: none;  /* Removes uppercase */
+letter-spacing: normal; /* Resets letter spacing */
+font-family: inherit; /* Inherits the default font */
+}
+
+/* Subtle right‑aligned bar under section titles */
+.title-bar {
+  border-bottom: 2px solid #BDC3C7;
+  width: 95%;
+  align-self: flex-end;
+  margin-top: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.section-content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+/* Profile Image in left column */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ccc; 
+  border: 3px solid black;
+  display: block;
+  margin: 0 auto 20px auto;
+  object-fit: cover;
+  object-position: top;
+}
+/* Profile Info in right column: Name & Title */
+.profile-info {
+  /* No extra left margin so text starts at 40px offset */
+}
+.profile-info h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #2C3E50;
+}
+.profile-info h2 {
+  margin: 5px 0 0;
+  font-size: 24px;
+  color: #2C3E50;
+}
+/* Basic text elements */
+
+h1 {
+font-family: 'Poppins', sans-serif;
+}
+h2 {
+font-family: 'Tenor Sans', sans-serif;
+text-transform: uppercase;
+letter-spacing: 5px;
+}
+p {
+font-family: 'Poppins', sans-serif;
+}
+p, ul {
+  line-height: 1.6;
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 10px;
+}
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #162029; /* Dark background for the body */
+  color: #ecf0f1; /* Light text color for dark mode */
+}
+
+body.dark-mode .left-column {
+  background-color: #34495e; /* Darker background for left column */
+}
+
+body.dark-mode .right-column {
+  background-color: #2c3e50; /* Darker background for right column */
+  border-left: 1px solid #3498db; /* Mid-brown border */
+}
+
+/* Specific targeting for profile name (h1) and title (h2) */
+body.dark-mode .profile-info h1,
+body.dark-mode .profile-info h2 {
+  color: #ecf0f1; /* Light color for the name and title in dark mode */
+}
+
+body.dark-mode .section-header h2 {
+  color: #3498db; /* Light text for section headers2 */
+text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); /* Subtle white shadow */
+}
+
+body.dark-mode .section-content {
+  color: #ecf0f1; /* Light text for section content */
+}
+
+body.dark-mode a {
+  color: #3498db; /* Light blue links in dark mode */
+}
+
+/* Profile Image for Dark Mode */
+body.dark-mode .profile-img {
+  border: 2px solid #ecf0f1; /* Light border for better contrast in dark mode */
+}
+
+/* Button Styling for the Theme Toggle */
+.theme-toggle-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.theme-toggle-button:hover {
+  background-color: #2980b9; /* Slightly darker blue when hovering */
+}
+
+/*Slide Button - DarkMode*/
+
+/* Slide Button - DarkMode */
+
+/* Style the switch container */
+.theme-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hide the actual checkbox */
+.theme-switch input {
+  display: none;
+}
+
+/* The slider */
+.theme-switch .slider {
+  position: relative;
+  width: 60px;
+  height: 25px;
+  background-color: #3498db;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+/* The slider when it's checked (Night Mode) */
+.theme-switch input:checked + .slider {
+  background-color: #2c3e50;
+}
+
+/* The switch circle inside the slider */
+.theme-switch .slider:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* The circle moves when the checkbox is checked (Night Mode) */
+.theme-switch input:checked + .slider:before {
+  transform: translateX(35px);
+}
+
+/* Sun and Moon icons */
+.theme-switch .sun-icon,
+.theme-switch .moon-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px; /* Make the icons smaller */
+  transition: 0.3s;
+}
+
+.theme-switch .sun-icon {
+  right: 6px; /* Sun on the left in light mode */
+  color: #f39c12; /* Sun color */
+}
+
+.theme-switch .moon-icon {
+  left: 6px; /* Moon on the right in dark mode */
+  color: #ecf0f1; /* Moon color */
+  opacity: 0; /* Moon is hidden in light mode */
+}
+
+/* When the checkbox is checked (Night Mode) */
+.theme-switch input:checked ~ .moon-icon {
+  opacity: 1; /* Show moon icon */
+}
+
+.theme-switch input:checked ~ .sun-icon {
+  opacity: 0; /* Hide sun icon */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-column, .right-column {
+    flex: 1 0 auto;
+    width: 100%;
+    padding-left: 20px; /* reduce left padding */
+    border-left: none;
+    border-radius: 8px;
+  }
+}
